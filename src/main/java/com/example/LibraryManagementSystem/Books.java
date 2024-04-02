@@ -2,6 +2,7 @@ package com.example.LibraryManagementSystem;
 
 
 import jakarta.persistence.*;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 @Entity
 @Table (name = "books")
@@ -56,4 +57,5 @@ public class Books {
     public Long getId() {
         return id;
     }
+
 }
