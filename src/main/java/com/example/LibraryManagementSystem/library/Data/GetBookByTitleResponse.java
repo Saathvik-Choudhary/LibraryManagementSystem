@@ -1,13 +1,9 @@
 package com.example.LibraryManagementSystem.library.Data;
 
-
-import com.example.LibraryManagementSystem.library.domain.Book;
-
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class GetBooksResponseByISBN {
-
+public class GetBookByTitleResponse {
     private Collection<BookSummary> books;
 
     public void addBook(final BookSummary book) {

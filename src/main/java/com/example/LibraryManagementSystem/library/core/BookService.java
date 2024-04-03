@@ -12,53 +12,53 @@ public class BookService {
 
     @Autowired
     private BookRepository bookRepository;
-    
-    public GetBooksResponseByISBN getBookByIsbn(final GetBookRequestByISBN request)
+
+    public GetBookByISBNResponse getBookByIsbn(final GetBookByISBNRequest request)
     {
-        final var response = new GetBooksResponseByISBN();
+        final var response = new GetBookByISBNResponse();
 
         final var books=bookRepository.findAll();
 
-        for(var i: books)
+        for(var book: books)
         {
-            if(Objects.equals(i.getiSBN(), request.getiSBN()));
+            if(Objects.equals(book.getiSBN(), request.getiSBN()));
             {
-                BookSummary book=new BookSummary(i.getAuthor(),i.getiSBN(),i.getTitle());
-                response.addBook(book);
+                BookSummary bookToAdd=new BookSummary(book.getAuthor(),book.getiSBN(),book.getTitle(),book.getbookId());
+                response.addBook(bookToAdd);
             }
         }
         return(response);
     }
 
-    public GetBookResponseByAuthor getBookByAuthor(final GetBookRequestByAuthor request)
+    public GetBookByAuthorResponse getBookByAuthor(final GetBookByAuthorRequest request)
     {
-        final var response = new GetBookResponseByAuthor();
+        final var response = new GetBookByAuthorResponse();
 
         final var books=bookRepository.findAll();
 
-        for(var i: books)
+        for(var book: books)
         {
-            if(Objects.equals(i.getiSBN(), request.getAuthor()));
+            if(Objects.equals(book.getiSBN(), request.getAuthor()));
             {
-                BookSummary book=new BookSummary(i.getAuthor(),i.getiSBN(),i.getTitle());
-                response.addBook(book);
+                BookSummary bookToAdd=new BookSummary(book.getAuthor(),book.getiSBN(),book.getTitle(),book.getbookId());
+                response.addBook(bookToAdd);
             }
         }
         return(response);
     }
 
-    public GetBookResponseByTitle getBookByAuthor(final GetBookRequestByTitle request)
+    public GetBookByTitleResponse getBookByTitle(final GetBookByTitleRequest request)
     {
-        final var response = new GetBookResponseByTitle();
+        final var response = new GetBookByTitleResponse();
 
         final var books=bookRepository.findAll();
 
-        for(var i: books)
+        for(var book: books)
         {
-            if(Objects.equals(i.getiSBN(), request.getTitle()));
+            if(Objects.equals(book.getiSBN(), request.getTitle()));
             {
-                BookSummary book=new BookSummary(i.getAuthor(),i.getiSBN(),i.getTitle());
-                response.addBook(book);
+                BookSummary bookToAdd=new BookSummary(book.getAuthor(),book.getiSBN(),book.getTitle(),book.getbookId());
+                response.addBook(bookToAdd);
             }
         }
         return(response);

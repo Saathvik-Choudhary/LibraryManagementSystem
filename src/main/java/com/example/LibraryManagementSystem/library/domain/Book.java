@@ -81,6 +81,10 @@ public class Book {
         return title;
     }
 
+    public Long getbookId(){
+        return bookId;
+    }
+
     /**
      * This not required for the project but this can be added in a real world project I guess
      */

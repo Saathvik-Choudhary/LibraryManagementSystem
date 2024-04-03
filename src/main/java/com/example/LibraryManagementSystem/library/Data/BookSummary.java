@@ -12,10 +12,11 @@ public class BookSummary {
 
     private final Long bookId;
 
-    public BookSummary(String author, String iSBN, String title) {
+    public BookSummary(final String author,final String iSBN,final String title,final Long bookId) {
         this.author = author;
         this.iSBN = iSBN;
         this.title = title;
+        this.bookId=bookId;
     }
 
     public String getAuthor() {
@@ -28,5 +29,9 @@ public class BookSummary {
 
     public String getTitle() {
         return title;
+    }
+
+    public Long getBookId() {
+        return bookId;
     }
 }

@@ -1,9 +1,10 @@
 package com.example.LibraryManagementSystem.library.Data;
 
+
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class GetBookResponseByAuthor {
+public class GetBookByISBNResponse {
 
     private Collection<BookSummary> books;
 

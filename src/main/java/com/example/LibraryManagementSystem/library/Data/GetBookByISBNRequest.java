@@ -1,8 +1,8 @@
 package com.example.LibraryManagementSystem.library.Data;
 
-public class GetBookRequestByISBN {
+public class GetBookByISBNRequest {
     private final String iSBN;
-    public GetBookRequestByISBN(final String iSBN ) {
+    public GetBookByISBNRequest(final String iSBN ) {
         this.iSBN = iSBN;
     }
 

@@ -1,9 +1,9 @@
 package com.example.LibraryManagementSystem.library.Data;
 
-public class GetBookRequestByAuthor {
+public class GetBookByAuthorRequest {
 
     private final String author;
-    public GetBookRequestByAuthor(final String author ) {
+    public GetBookByAuthorRequest(final String author ) {
 
         this.author = author;
     }

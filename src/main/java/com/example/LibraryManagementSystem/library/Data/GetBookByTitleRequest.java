@@ -1,10 +1,10 @@
 package com.example.LibraryManagementSystem.library.Data;
 
-public class GetBookRequestByTitle {
+public class GetBookByTitleRequest {
 
     private final String title;
 
-    public GetBookRequestByTitle(final String title) {
+    public GetBookByTitleRequest(final String title) {
         this.title = title;
     }
 
