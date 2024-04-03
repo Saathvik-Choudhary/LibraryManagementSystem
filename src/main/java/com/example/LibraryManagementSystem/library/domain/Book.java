@@ -16,10 +16,11 @@ public class Book {
     @Column(name = "bookType",nullable = false,updatable = false)
     private String bookType;
 
+    @Id
     @Column(name = "ISBN",nullable = false,updatable = false)
     private String iSBN;
 
-    @Column(name = "publisher",nullable = false,updatable = true)
+    @Column(name = "publisher",nullable = false)
     private String publisher;
 
     @Column(name = "title",nullable = false,updatable = false)
@@ -52,43 +53,33 @@ public class Book {
     //private Set<Student> holders;
 
 
+    public String getAuthor() {
+        return author;
+    }
+
     public int getAvailability() {
         return availability;
     }
 
-    public String getISBN() {
+    public String getBookType() {
+        return bookType;
+    }
+
+    public String getiSBN() {
         return iSBN;
+    }
+
+    public String getPublisher() {
+        return publisher;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public String getAuthor() {
-        return author;
-    }
-
-
-
-    public String getBookType() {
-        return bookType;
-    }
-
-
     /**
      * This not required for the project but this can be added in a real world project I guess
      */
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
 
 }

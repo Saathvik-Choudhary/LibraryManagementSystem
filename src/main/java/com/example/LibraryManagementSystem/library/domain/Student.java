@@ -1,4 +1,4 @@
-package com.example.LibraryManagementSystem;
+package com.example.LibraryManagementSystem.library.domain;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
@@ -20,6 +20,7 @@ public class Student {
     @Column(name = "dob",nullable = false,updatable = false)
     private LocalDate dob;
 
+    @Id
     @Column(name = "studentId",nullable = false,updatable = false)
     private String studentId;
 
@@ -32,17 +33,6 @@ public class Student {
     }
 
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
 }
 
 

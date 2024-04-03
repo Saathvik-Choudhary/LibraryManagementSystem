@@ -1,42 +1,34 @@
 package com.example.LibraryManagementSystem.library.core;
 
 import com.example.LibraryManagementSystem.library.domain.Book;
-import com.example.LibraryManagementSystem.library.persistence.BooksRepository;
+import com.example.LibraryManagementSystem.library.persistence.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service
 public class BookService {
 
     @Autowired
-    private BooksRepository bookRepository;
+    private BookRepository bookRepository;
 
+    private final var books=bookRepository.findAll();
+    public void getBookByIsbn(final String iSBM )
+    {
+        for(var i: books)
+        {
+            
+        }
+    }
 
-    public void getBooks()
+    public void putBook()
     {
 
     }
 
-
-    public void create(Book book){
-        bookRepository.save(book);
-    }
-
-    public void delete(Long id){
-        bookRepository.deleteById(id);
-    }
-
-    public void update(Book book)
+    public void updateBook()
     {
-        bookRepository.save(book);
-    }
 
-    public void read(Long id)
-    {
-        bookRepository.findById(id);
     }
-
 
 
 }

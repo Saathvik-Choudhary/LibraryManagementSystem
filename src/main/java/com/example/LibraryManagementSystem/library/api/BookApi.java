@@ -16,10 +16,12 @@ public class BookApi {
 
     private BookService bookService;
 
-
+/*
     @GetMapping(??)
     public ResponseEntity<?> getBooks(@PathVariable ??)
     {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
+
+ */
 }
