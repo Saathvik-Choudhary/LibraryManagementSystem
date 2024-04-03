@@ -17,6 +17,10 @@ public class Book {
     private String bookType;
 
     @Id
+    @Column(name = "bookid",nullable = false,updatable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long bookId;
+
     @Column(name = "ISBN",nullable = false,updatable = false)
     private String iSBN;
 

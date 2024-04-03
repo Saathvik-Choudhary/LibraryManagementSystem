@@ -10,6 +10,8 @@ public class BookSummary {
 
     private final String title;
 
+    private final Long bookId;
+
     public BookSummary(String author, String iSBN, String title) {
         this.author = author;
         this.iSBN = iSBN;
