@@ -2,11 +2,10 @@ package com.example.LibraryManagementSystem;
 
 
 import jakarta.persistence.*;
-import org.springframework.data.jpa.repository.JpaRepository;
 
 @Entity
 @Table (name = "books")
-public class Books {
+public class Book {
 
     @Column(name = "isbm",nullable = false,updatable = false)
     private String isbn;
