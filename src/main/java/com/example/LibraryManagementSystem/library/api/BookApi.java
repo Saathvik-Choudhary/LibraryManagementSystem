@@ -18,13 +18,13 @@ class BookAPI {
     /**
      * Gets books matching certain criteria.
      */
-    @GetMapping("/bookbytitle") // service to web with controller intermediate
+    @GetMapping("/title") // service to web with controller intermediate
     public ResponseEntity<GetBookByTitleResponse> getBooksByTitle( final String title) {
         return ResponseEntity.ok(bookService.getBookByTitle(new GetBookByTitleRequest(title)));
     }
 
 
-    @GetMapping // service to web with controller intermediate
+    @GetMapping("/author") // service to web with controller intermediate
     public ResponseEntity<GetBookByAuthorResponse> getBooksByAuthor(final String Author) {
         return ResponseEntity.ok(bookService.getBookByAuthor(new GetBookByAuthorRequest(Author)));
     }
