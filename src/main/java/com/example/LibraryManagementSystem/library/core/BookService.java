@@ -19,10 +19,8 @@ public class BookService {
 
         final var books=bookRepository.findAll();
 
-        for(var book: books)
-        {
-            if(Objects.equals(book.getiSBN(), request.getiSBN()));
-            {
+        for(var book: books) {
+            if(Objects.equals(book.getiSBN(), request.getiSBN())){
                 BookSummary bookToAdd=new BookSummary(book.getAuthor(),book.getiSBN(),book.getTitle(),book.getbookId());
                 response.addBook(bookToAdd);
             }
@@ -36,10 +34,8 @@ public class BookService {
 
         final var books=bookRepository.findAll();
 
-        for(var book: books)
-        {
-            if(Objects.equals(book.getiSBN(), request.getAuthor()));
-            {
+        for(var book: books) {
+            if(Objects.equals(book.getiSBN(), request.getAuthor())){
                 BookSummary bookToAdd=new BookSummary(book.getAuthor(),book.getiSBN(),book.getTitle(),book.getbookId());
                 response.addBook(bookToAdd);
             }
@@ -53,10 +49,8 @@ public class BookService {
 
         final var books=bookRepository.findAll();
 
-        for(var book: books)
-        {
-            if(Objects.equals(book.getiSBN(), request.getTitle()));
-            {
+        for(var book: books) {
+            if(Objects.equals(book.getiSBN(), request.getTitle())){
                 BookSummary bookToAdd=new BookSummary(book.getAuthor(),book.getiSBN(),book.getTitle(),book.getbookId());
                 response.addBook(bookToAdd);
             }
