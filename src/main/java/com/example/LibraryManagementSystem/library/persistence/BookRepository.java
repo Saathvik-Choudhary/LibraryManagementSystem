@@ -1,6 +1,7 @@
 package com.example.LibraryManagementSystem.library.persistence;
 
 import com.example.LibraryManagementSystem.library.domain.Book;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
@@ -12,6 +13,7 @@ import java.util.Optional;
 public interface BookRepository extends CrudRepository<Book,Long>  //JpaRepository<Book, Long> {
 {
     /**
+    /**
      * class :Book
      *      table: book
      *  method: finalAll
@@ -19,9 +21,10 @@ public interface BookRepository extends CrudRepository<Book,Long>  //JpaReposito
      * return: Iterable Book
      *      caluse:SELECT *
      * now table name is added to the above created mysql quere
-     */
+
 
     @Override
+    @Query(value = "From Book b",)
     Iterable<Book> findAll();
 
 
@@ -29,10 +32,10 @@ public interface BookRepository extends CrudRepository<Book,Long>  //JpaReposito
      * SELECT * FROM book WHERE id=
      * @param id
      * @return the book with the particular id
-     */
+
     @Override
     Optional<Book> findById(Long id);  // optional data type is used when returning null might cause a error
                                        // it represents the absence of a element also
                                        // have to make changes to already created classes in this project to include optional
-
+    */
 }

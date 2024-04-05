@@ -3,6 +3,7 @@ package com.example.LibraryManagementSystem.library.core;
 import com.example.LibraryManagementSystem.library.Data.*;
 import com.example.LibraryManagementSystem.library.persistence.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
@@ -50,7 +51,7 @@ public class BookService {
         final var books=bookRepository.findAll();
 
         for(var book: books) {
-            if(Objects.equals(book.getiSBN(), request.getTitle())){
+            if(Objects.equals(book.getTitle(), request.getTitle())){
                 BookSummary bookToAdd=new BookSummary(book.getAuthor(),book.getiSBN(),book.getTitle(),book.getbookId());
                 response.addBook(bookToAdd);
             }
