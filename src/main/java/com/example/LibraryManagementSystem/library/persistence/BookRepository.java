@@ -1,9 +1,13 @@
 package com.example.LibraryManagementSystem.library.persistence;
 
+import com.example.LibraryManagementSystem.library.Data.BookSummary;
 import com.example.LibraryManagementSystem.library.domain.Book;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.Collection;
 import java.util.Optional;
 
 //based on entity name  spring boot auto wires this repository
@@ -12,6 +16,24 @@ import java.util.Optional;
 
 public interface BookRepository extends CrudRepository<Book,Long>  //JpaRepository<Book, Long> {
 {
+
+    @Query("FROM Book b WHERE b.title = ?1")
+    public Iterable<Book> findBookByTitle(String s);
+
+
+    default Collection<Book> findBookByTitle(){
+        final Specification<Book> specification=(root ,query,builder)->builder.equal(builder.size(root.get(Book_.title)),1);
+        return specification;
+    }
+
+    /**
+     *  default List<ChemicalElement> finadNuclides(){
+     *      final Specification<ChemicalElement> specification =(root ,query, builder)
+     *          -> builder.equal(builder.size(root.get(ChemicalElement_.ISOTOPES)), 1)
+     */
+
+    public Optional<Book> findBookByTitleOptional(String s);
+
     /**
     /**
      * class :Book
