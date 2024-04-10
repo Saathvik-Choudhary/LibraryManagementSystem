@@ -17,14 +17,16 @@ import java.util.Optional;
 public interface BookRepository extends CrudRepository<Book,Long>  //JpaRepository<Book, Long> {
 {
 
-    @Query("FROM Book b WHERE b.title = ?1")
-    public Iterable<Book> findBookByTitle(String s);
+    //@Query("FROM Book b WHERE b.title = ?1")
+    //public Iterable<Book> findBookByTitle(String s);
 
 
+    /*
     default Collection<Book> findBookByTitle(){
         final Specification<Book> specification=(root ,query,builder)->builder.equal(builder.size(root.get(Book_.title)),1);
         return specification;
     }
+     */
 
     /**
      *  default List<ChemicalElement> finadNuclides(){
@@ -32,7 +34,7 @@ public interface BookRepository extends CrudRepository<Book,Long>  //JpaReposito
      *          -> builder.equal(builder.size(root.get(ChemicalElement_.ISOTOPES)), 1)
      */
 
-    public Optional<Book> findBookByTitleOptional(String s);
+    //public Optional<Book> findBookByTitleOptional(String s);
 
     /**
     /**

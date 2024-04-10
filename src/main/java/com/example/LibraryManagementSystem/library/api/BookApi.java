@@ -30,7 +30,7 @@ class BookAPI {
     }
 
 
-    @GetMapping("/author") // service to web with controller intermediate
+    @GetMapping("/author/{author}") // service to web with controller intermediate
     public ResponseEntity<GetBookByAuthorResponse> getBooksByAuthor(final String Author) {
         return ResponseEntity.ok(bookService.getBookByAuthor(new GetBookByAuthorRequest(Author)));
     }
