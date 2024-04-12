@@ -21,12 +21,13 @@ public interface BookRepository extends CrudRepository<Book,Long>  //JpaReposito
     //public Iterable<Book> findBookByTitle(String s);
 
 
-    /*
-    default Collection<Book> findBookByTitle(){
-        final Specification<Book> specification=(root ,query,builder)->builder.equal(builder.size(root.get(Book_.title)),1);
-        return specification;
+
+
+    default Specification<Book> findBookByTitle(String title){
+        return (Specification<Book>) (root , query, builder)
+                ->builder.equal(root.get("title"), title);
     }
-     */
+
 
     /**
      *  default List<ChemicalElement> finadNuclides(){

@@ -21,7 +21,7 @@ public class BookService {
     // response entity represents a http response
 
     /**
-     *      return response.ok()? response.:ResponseEntity.ok(response):ResponseEntity.badRequest().body();
+     *      return response.isok()? response.:ResponseEntity.ok(response):ResponseEntity.badRequest().body();
      *      use this to check and return an error or the correct required response
      *
      *      ResponseEntity defines a http response which is given by the API
@@ -71,6 +71,17 @@ public class BookService {
      *
      *
      *      ResponseEntity.accepted().build() is used whenever we are working with @Async annotation
+     *
+     ****************************************************************************************************************************************************************
+     * Never restrict your application to a certain number of input or output formats
+     *
+     * instead let spring boot handle the data format conversion that is handles
+     *
+     *
+     * -----> if your return type is list then it can't be visible in a xml format
+     ****************************************************************************************************************************************************************
+     *
+     *
      *
      ****************************************************************************************************************************************************************
      */
